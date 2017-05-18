@@ -9,5 +9,10 @@ setup(
     author='Holger Protzek',
     author_email='h.protzek@icloud.com',
     url='https://github.com/hprotzek/image-keyword-tagger',
-    packages=find_packages(exclude=('tests', 'docs'))
+    packages=find_packages(),
+    entry_points={
+        'console_scripts': [
+          'image-recognition-tagger = src.image_keyword_tagger:main',
+        ]
+      }
 )
