@@ -13,7 +13,7 @@ class ImageKeywordTagger():
         self.client = self.get_client(region, access_key, secret_key)
 
     def readAndTagImages(self, start_dir):
-        for root, dirs, files in os.walk(start_dir, topdown=False):
+        for root, dirs, files in os.walk(start_dir, topdown=True):
             dirs[:] = [d for d in dirs if d not in ['@eaDir']]
             for name in files:
                 print (os.path.join(root, name))
