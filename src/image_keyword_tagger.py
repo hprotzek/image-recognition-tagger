@@ -14,6 +14,7 @@ class ImageKeywordTagger():
 
     def readAndTagImages(self, start_dir):
         for root, dirs, files in os.walk(start_dir, topdown=False):
+            dirs[:] = [d for d in dirs if d not in ['@eaDir']]
             for name in files:
                 print (os.path.join(root, name))
                 if name.endswith(('jpg','JPG')):
